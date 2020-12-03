@@ -1,6 +1,6 @@
 // Create function for Data plotting (Bar, gauge, bubble)
 function getdata(tm) {
-  d3.json("NBA_Salary_app/Resources/basketball_table.json").then(function (nbaData) {
+  d3.json("Resources/basketball_table.json").then(function (nbaData) {
     // console.log(nbaData);
     // var trying = Object.values(nbaData);
     // // console.log(trying);
@@ -40,7 +40,7 @@ function getdata(tm) {
     var points = salary_test.map(data => data.pts);
     console.log(points);
 
-    difTeam = nbaData.map(data=> data.tm)[1];
+    var difTeam = nbaData.map(data=> data.tm)[1];
     console.log(difTeam)
 
     var per = salary_test.map(data => data.PER);
@@ -59,6 +59,7 @@ function getdata(tm) {
     console.log(teamList);
     testing2 = colors[teamList];
     console.log(testing2);
+
 
     for (i = 1; i < player_list.length; i++) {
       if(player_list[0] == player_list[i]){
@@ -97,21 +98,21 @@ function getdata(tm) {
     
     
     let trace1 = {
-      x: salary1,
+      x: salary,
       y: points,
       text: player_list,
       mode: 'markers',
 
       marker: {
-        color: salary1,
+        color: salary,
         size: per
       },
     }
     let data1 = [trace1];
-    var layout = {
+    var layout1 = {
       title: "NBA Salary"
     }
-    Plotly.newPlot("bubble", data1, layout)
+    Plotly.newPlot("bubble", data1, layout1)
 
     var data2 = [{
       values: salary,
@@ -119,12 +120,12 @@ function getdata(tm) {
       type: "pie"
     }];
 
-    var layout = {
+    var layout1 = {
       height: 400,
       width: 500
     };
 
-    Plotly.newPlot('gauge', data2, layout);
+    Plotly.newPlot('gauge', data2, layout1);
 
 
   //   let trace2 = [

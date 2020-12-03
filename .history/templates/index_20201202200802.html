@@ -1,0 +1,85 @@
+<!DOCTYPE html5>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./images/nba_browser_icon.png" rel="icon" type="image/x-icon" />
+  <title>NBA Statistical Analysis</title>
+  <script>src = "https://d3js.org/d3.v5.min.js"</script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="drop">
+    <ul class="drop_menu">
+      <li><a href='#'>Menu</a>
+        <ul>
+            <li><a href='main.html'>Home</a></li>
+            <li><a href='about.html'>About</a></li>
+            <li><a href='map.html'>Salary Map</a></li>
+            <li><a href='index.html'>Stats by Team</a></li>
+        </ul>
+        </a>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 jumbotron text-center">
+        <!-- <div style= "background-image: url('./images/nba-9.jpg');"> -->
+        <br>
+        <br>
+        <h1>NBA $alary Analysis</h1>
+        <br>
+        <br>
+        <p id="first">We judged...</p>
+        <br>
+        <p id="second">...so you don't have to</p>
+        </style>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="well">
+        <h5>NBA Teams:</h5>
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Player Stats</h3>
+        </div>
+        <div id="sample-metadata" class="panel-body"></div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div id="bar"></div>
+    </div>
+    <div class="col-md-5">
+      <div id="gauge"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="bubble"></div>
+    </div>
+  </div>
+  </div>
+  <!--d3 Link-->
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="../static/app.js"></script>
+  <!-- <script src="<https://plot.ly/javascript/gauge-charts"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+         <div id="chart_div" style="width: 400px; height: 120px;"></div> -->
+  <!--<script src="./static/js/bonus.js"></script>-->
+
+</body>
+
+</html>
+</body>
+
+</html>

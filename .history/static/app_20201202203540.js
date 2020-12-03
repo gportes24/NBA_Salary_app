@@ -1,6 +1,6 @@
 // Create function for Data plotting (Bar, gauge, bubble)
 function getdata(tm) {
-  d3.json("NBA_Salary_app/Resources/basketball_table.json").then(function (nbaData) {
+  d3.json("../Resources/basketball_table.json").then(function (nbaData) {
     // console.log(nbaData);
     // var trying = Object.values(nbaData);
     // // console.log(trying);
