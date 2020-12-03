@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap");
+
+body {
+  /* background-image: url("http://kusg.de/wp-content/uploads/2017/01/wallpaper-basketball4-1050x591.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  color: blanchedalmond;
+  text-align: justify;
+  font-family: "Spartan", sans-serif;
+}
+
+/* CSSTerm.com Horizontal Easy DropDown CSS menu */
+
+.drop_menu {
+	background: transparent;
+	padding:0;
+	margin-left:2%;
+	list-style-type:none;
+  height:40px;
+  color: blanchedalmond;
+}
+.drop_menu li { float:left; }
+.drop_menu li a {
+	padding:12px 20px;
+	display:block;
+	color: blanchedalmond;
+	text-decoration:none;
+  font-family: "Spartan", sans-serif;
+}
+
+/* Submenu */
+.drop_menu ul {
+	position: absolute;
+	left:-9999px;
+	top:-9999px;
+	list-style-type:none;
+}
+.drop_menu li:hover { position:relative; background:transparent;  }
+.drop_menu li:hover ul {
+	left:0px;
+	top:38px;
+	background:transparent;
+	padding:0px;
+}
+
+.drop_menu li:hover ul li a {
+	padding:10px;
+	display:block;
+	width:168px;
+	text-indent:15px;
+	background-color:transparent;
+}
+.drop_menu li:hover ul li a:hover { background:blanchedalmond; opacity: 0.8; color: black; transition: opacity .25s ease-in-out;  }
+.jumbotron {
+  background: transparent;
+}
+
+#first {
+  text-align: left;
+
+}
+
+#second {
+  text-align: right;
+
+}
+
+.logo {
+  text-align: top left;
+}
+
+
+
+

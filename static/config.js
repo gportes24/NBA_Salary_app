@@ -1,0 +1,3 @@
+// API key
+const API_KEY = "pk.eyJ1IjoiYW1iZXJnZXJzaG1hbiIsImEiOiJja2doNHc2eTgwMmM5MnVsdml6cDk1OXg1In0.5aiyKZ69YKHKNCcFuE4Dew"
+const access_token = "pup7Ae90QAWYkTtJ8G57srSFPEBGizsgHgXgmxMuxbZG0NqTazrSy9iYTl2Ow93H"
