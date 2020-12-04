@@ -178,7 +178,7 @@ function getMoney(tm) {
     player_sals = uniquekeepFirst(filtered_tm, it=>it.Player)
     console.log(player_sals)
     for (var p=0; p<player_sals.length; p++){
-      player_sals[p]["yr2019_20"] = "$" + player_sals[p]["yr2019_20"].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      player_sals[p][yr2019_20] = "$" + player_sals[p][yr2019_20].toFixed(0);
   }
     
 
@@ -189,7 +189,7 @@ function getMoney(tm) {
     salaryInfo.html("");
 
     for (var prop in player_sals) {
-      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20+ "\n");
+      salaryInfo.append("h5").text(player_sals[prop].Player + ": $" + player_sals[prop].yr2019_20);
       console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
     }
   });

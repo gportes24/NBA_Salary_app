@@ -147,15 +147,25 @@ function getMoney(tm) {
     // console.log(teamnames)
     teamStats = [...teamStats];
     console.log(teamStats);
-
+    function dedupUsingFilter(a) {
+      const map = {};
+      return a.filter(element => {
+        if (map[element]) {
+          return false
+        } else {
+          map[element] = true;
+          return true;
+        }
+      });
+    }
     var filtered_tm = data.filter(a => a.tm === tm);
+    dedupUsingFilter(filtered_tm);
     console.log(filtered_tm);
     var salary_test = filtered_tm.filter(s => s.yr2019_20.toString() == s.yr2019_20);
     console.log(salary_test);
     var player_list = salary_test.map(data => data.Player);
     console.log(player_list)
     var salary = salary_test.map(data => data.yr2019_20);
-
 
     for (i = 1; i < player_list.length; i++) {
       if (player_list[0] == player_list[i]) {
@@ -168,29 +178,19 @@ function getMoney(tm) {
     var money = player_list.concat(salary);
     console.log(money);
 
-    function uniquekeepFirst(data, key) {
-      return [
-        ...new Map(
-          data.map(x => [key(x), x])
-        ).values()
-      ]
-    }
-    player_sals = uniquekeepFirst(filtered_tm, it=>it.Player)
-    console.log(player_sals)
-    for (var p=0; p<player_sals.length; p++){
-      player_sals[p]["yr2019_20"] = "$" + player_sals[p]["yr2019_20"].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-  }
-    
+    const unique_salary = [...new Set(filtered_tm)];
+    console.log(unique_salary);
 
-    
+
+
     var salaryInfo = d3.select("#salary-prediction");
 
     // empty player salary before getting new salary based on team selected
     salaryInfo.html("");
 
-    for (var prop in player_sals) {
-      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20+ "\n");
-      console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
+    for (var prop in filtered_tm) {
+      salaryInfo.append("h5").text(filtered_tm[prop].Player + ": $" + filtered_tm[prop].yr2019_20);
+      console.log(filtered_tm[prop].Player, filtered_tm[prop].yr2019_20);
     }
   });
 }

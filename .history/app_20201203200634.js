@@ -175,22 +175,18 @@ function getMoney(tm) {
         ).values()
       ]
     }
-    player_sals = uniquekeepFirst(filtered_tm, it=>it.Player)
-    console.log(player_sals)
-    for (var p=0; p<player_sals.length; p++){
-      player_sals[p]["yr2019_20"] = "$" + player_sals[p]["yr2019_20"].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-  }
-    
+    console.log(JSON.stringify(uniquekeepFirst(filtered_tm, it=>it.Player)));
 
-    
+
+
     var salaryInfo = d3.select("#salary-prediction");
 
     // empty player salary before getting new salary based on team selected
     salaryInfo.html("");
 
-    for (var prop in player_sals) {
-      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20+ "\n");
-      console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
+    for (var prop in filtered_tm) {
+      salaryInfo.append("h5").text(filtered_tm[prop].Player + ": $" + filtered_tm[prop].yr2019_20);
+      console.log(filtered_tm[prop].Player, filtered_tm[prop].yr2019_20);
     }
   });
 }

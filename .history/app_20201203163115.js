@@ -7,10 +7,10 @@ function getdata(tm) {
     // var code = nbaData.value();
     // console.log(code);
 
-    var grouped = Object.fromEntries(Object.entries(nbaData).filter(([k, v]) => v = "tm"));
+    var grouped = Object.fromEntries(Object.entries(nbaData).filter(([k,v]) => v="tm"));
     // console.log(grouped);
-
-
+    
+    
     //this creates a list of unique teams
     let teamnames = new Set;
     let teamStats = new Set;
@@ -27,20 +27,20 @@ function getdata(tm) {
     let tmlist = Array.from(teamnames);
     console.log(tmlist);
 
-
+    
 
 
     var filtered = nbaData.filter(a => a.tm == tm);
     console.log(filtered);
 
-    var salary_test = filtered.filter(s => s.yr2019_20.toString() == s.yr2019_20);
+    var salary_test = filtered.filter(s => s.yr2019_20.toString()==s.yr2019_20);
     console.log(salary_test);
     var player_list = salary_test.map(data => data.Player);
     console.log(player_list);
     var points = salary_test.map(data => data.pts);
     console.log(points);
 
-    var difTeam = nbaData.map(data => data.tm)[1];
+    var difTeam = nbaData.map(data=> data.tm)[1];
     console.log(difTeam)
 
     var per = salary_test.map(data => data.PER);
@@ -52,20 +52,18 @@ function getdata(tm) {
 
     var salary1 = [... new Set(salary)];
     console.log(salary1);
-    var colors = {
-      "ATL": "Red", "BRK": "Black", "BOS": "Green", "CHO": "purple", "CHI": "red", "CLE": "maroon", "DAL": "blue", "DEN": "navy", "DET": "blue", "GSW": "yellow", "HOU": "red", "IND": "blue", "LAC": "Red", "LAL": "Purple", "MEM": "blue", "MIA": "maroon",
-      "MIL": "green", "MIN": "navy", "NOP": "blue", "NYK": "FF7F03", "OKC": "light blue", "ORL": "blue", "PHI": "blue", "PHO": "FF7F03", "POR": "red", "SAC": "purple", "SAS": "gray", "TOR": "red", "UTA": "yellow", "WAS": "red"
-    };
+    var colors = {"ATL" : "Red", "BRK": "Black", "BOS":"Green", "CHO":"purple", "CHI": "red", "CLE": "maroon", "DAL": "blue", "DEN": "navy", "DET": "blue", "GSW": "yellow", "HOU": "red", "IND": "blue", "LAC": "Red", "LAL": "Purple","MEM": "blue", "MIA": "maroon",
+    "MIL": "green", "MIN": "navy", "NOP": "blue", "NYK": "FF7F03", "OKC": "light blue", "ORL": "blue", "PHI": "blue", "PHO": "FF7F03", "POR": "red", "SAC": "purple", "SAS": "gray", "TOR": "red", "UTA": "yellow", "WAS": "red"};
     console.log(colors);
-    var teamList = salary_test.map(data => data.tm)[0];
+    var teamList = salary_test.map(data=>data.tm)[0];
     console.log(teamList);
     testing2 = colors[teamList];
     console.log(testing2);
 
 
     for (i = 1; i < player_list.length; i++) {
-      if (player_list[0] == player_list[i]) {
-        player_list = player_list.slice(0, i);
+      if(player_list[0] == player_list[i]){
+        player_list = player_list.slice(0,i);
         salary = salary.slice(0, i);
         console.log(player_list);
         console.log(player_list);
@@ -78,15 +76,15 @@ function getdata(tm) {
       type: "bar",
       text: player_list,
       orientation: "h",
-      marker: { color: testing2 },
+      marker: {color: testing2},
     };
     var data = [trace];
 
     var layout = {
       title: "NBA Salary by Team",
-      xaxis: {
-        type: 'category-unique'
-      },
+      xaxis:{
+        type:'category-unique'
+        },
       margin: {
         l: 100,
         r: 100,
@@ -96,9 +94,9 @@ function getdata(tm) {
     };
 
     Plotly.newPlot("bar", data, layout);
-
-
-
+    
+    
+    
     let trace1 = {
       x: salary,
       y: points,
@@ -133,7 +131,7 @@ function getdata(tm) {
 }
 
 function getMoney(tm) {
-  d3.json("Resources/basketball_table.json").then((data) => {
+  d3.json("Resources/basketball_table.json").then((data)=> {
     console.log(data)
     let teamnames = new Set;
     let teamStats = new Set;
@@ -147,52 +145,20 @@ function getMoney(tm) {
     // console.log(teamnames)
     teamStats = [...teamStats];
     console.log(teamStats);
-
-    var filtered_tm = data.filter(a => a.tm === tm);
+    var filtered_tm = data.filter(a => a.tm === tm)[1];
     console.log(filtered_tm);
-    var salary_test = filtered_tm.filter(s => s.yr2019_20.toString() == s.yr2019_20);
-    console.log(salary_test);
-    var player_list = salary_test.map(data => data.Player);
-    console.log(player_list)
-    var salary = salary_test.map(data => data.yr2019_20);
+        
 
-
-    for (i = 1; i < player_list.length; i++) {
-      if (player_list[0] == player_list[i]) {
-        player_list = player_list.slice(0, i);
-        salary = salary.slice(0, i);
-        console.log(player_list);
-        console.log(salary);
-      }
-    }
-    var money = player_list.concat(salary);
-    console.log(money);
-
-    function uniquekeepFirst(data, key) {
-      return [
-        ...new Map(
-          data.map(x => [key(x), x])
-        ).values()
-      ]
-    }
-    player_sals = uniquekeepFirst(filtered_tm, it=>it.Player)
-    console.log(player_sals)
-    for (var p=0; p<player_sals.length; p++){
-      player_sals[p]["yr2019_20"] = "$" + player_sals[p]["yr2019_20"].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-  }
-    
-
-    
     var salaryInfo = d3.select("#salary-prediction");
-
-    // empty player salary before getting new salary based on team selected
+    
+    // empty the demographic info panel each time before getting new id info
     salaryInfo.html("");
 
-    for (var prop in player_sals) {
-      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20+ "\n");
-      console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
-    }
-  });
+    // grab the necessary demographic data data for the id and append the info to the panel
+    Object.entries(filtered_tm).forEach((key) => {   
+            salaryInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
+    });
+});
 }
 
 function optionChanged(tm) {

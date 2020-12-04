@@ -189,7 +189,7 @@ function getMoney(tm) {
     salaryInfo.html("");
 
     for (var prop in player_sals) {
-      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20+ "\n");
+      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20);
       console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
     }
   });
