@@ -168,8 +168,6 @@ function getMoney(tm) {
     var money = player_list.concat(salary);
     console.log(money);
 
-
-    //the function below removes duplicate player/salary values from array/object
     function uniquekeepFirst(data, key) {
       return [
         ...new Map(
@@ -189,13 +187,19 @@ function getMoney(tm) {
 
     // empty player salary before getting new salary based on team selected
     salaryInfo.html("");
-
-    //this portions groups players by PER and Position - see output in console log
     var output = _.groupBy(player_sals, function (entry) {
       return entry.PER + ',' + entry.pos;
     });
     var output = output
     console.log(output);
+
+    output.sort((a, b) => b.PER - a.PER);
+
+    output.forEach((e) => {
+      console.log(`${e.PER} ${e.pos}`);
+    });
+
+
 
     for (var prop in player_sals) {
       salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20 + "\n");

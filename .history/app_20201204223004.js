@@ -168,8 +168,6 @@ function getMoney(tm) {
     var money = player_list.concat(salary);
     console.log(money);
 
-
-    //the function below removes duplicate player/salary values from array/object
     function uniquekeepFirst(data, key) {
       return [
         ...new Map(
@@ -177,28 +175,27 @@ function getMoney(tm) {
         ).values()
       ]
     }
-    player_sals = uniquekeepFirst(filtered_tm, it => it.Player)
+    player_sals = uniquekeepFirst(filtered_tm, it=>it.Player)
     console.log(player_sals)
-    for (var p = 0; p < player_sals.length; p++) {
+    for (var p=0; p<player_sals.length; p++){
       player_sals[p]["yr2019_20"] = "$" + player_sals[p]["yr2019_20"].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
-    }
+  }
+    
 
-
-
+    
     var salaryInfo = d3.select("#salary-prediction");
 
     // empty player salary before getting new salary based on team selected
     salaryInfo.html("");
-
-    //this portions groups players by PER and Position - see output in console log
-    var output = _.groupBy(player_sals, function (entry) {
-      return entry.PER + ',' + entry.pos;
+    var output = _.groupBy(player_sals, function(entry) { 
+      return entry.PER + ',' + entry.pos; 
     });
-    var output = output
+    var ouput = output
+    output.sort();
     console.log(output);
 
     for (var prop in player_sals) {
-      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20 + "\n");
+      salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20+ "\n");
       console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
     }
   });
@@ -225,7 +222,7 @@ function init() {
     // console.log(teamnames)
     teamStats = [...teamStats];
     // console.log(teamStats);
-
+    
     teamnames.forEach(function (team) {
       dropdown.append("option").text(team).property("value")
       console.log(team)
