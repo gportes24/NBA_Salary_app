@@ -272,7 +272,7 @@ function getMoney(tm) {
         PER: row["PER"],
         pos: row["pos"],
       };
-      console.log(info);
+      // console.log(info);
     });
     //forEach through rows to push only Top 5 PlayerName and PERbyPoistion in new variable
     let topFivePos = [output[0]];
@@ -284,7 +284,7 @@ function getMoney(tm) {
         topFivePos.push(row);
       }
     });
-
+    console.log(topFivePos);
     // var outputArray = Object.values(output).flat();
 
     // var sorted_array= outputArray.sort(function(a,b){
