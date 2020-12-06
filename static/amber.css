@@ -1,0 +1,44 @@
+html,
+body,
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.background-image {
+    background-image: url('../Background1.png');
+    float: left;
+    opacity: 85%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #BC040A;
+    overflow-x: hidden;
+    color: white; 
+}
+
+.sidenav h1 {
+    text-align: center;
+    font-size: 110px;
+    font-family: 'Bebas Neue', cursive;
+}
+.sidenav h2 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu {
+    color: white;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 150px;
+    text-align: center;
+}
+
