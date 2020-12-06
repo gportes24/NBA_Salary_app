@@ -207,12 +207,12 @@ function getMoney(tm) {
     console.log(output);
 
     var outputArray = Object.values(output).flat();
-
+    console.log(outputArray);
 
     var sorted_array= outputArray.sort(function(a,b){
       return parseFloat(b.PER) - parseFloat(a.PER);
     })
-  
+    console.log(sorted_array);
 
     var positions = ["PG", "SG", "SF", "PF", "C"];
     var startingFive = [];
@@ -221,12 +221,8 @@ function getMoney(tm) {
         return b.pos.toLowerCase()===a.toLocaleLowerCase();
 
       })
-
       startingFive.push(x);
-      
     })
-
-    console.log(startingFive);
 
 
     for (var prop in player_sals) {

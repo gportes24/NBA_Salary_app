@@ -206,28 +206,9 @@ function getMoney(tm) {
     });
     console.log(output);
 
-    var outputArray = Object.values(output).flat();
-
-
-    var sorted_array= outputArray.sort(function(a,b){
-      return parseFloat(b.PER) - parseFloat(a.PER);
-    })
+    var outputArray = Object.values(output);
+    console.log(outputArray);
   
-
-    var positions = ["PG", "SG", "SF", "PF", "C"];
-    var startingFive = [];
-    positions.forEach (function(a){
-      var x = sorted_array.find(function(b){
-        return b.pos.toLowerCase()===a.toLocaleLowerCase();
-
-      })
-
-      startingFive.push(x);
-      
-    })
-
-    console.log(startingFive);
-
 
     for (var prop in player_sals) {
       salaryInfo.append("h5").text(player_sals[prop].Player + ": " + player_sals[prop].yr2019_20 + "\n");
