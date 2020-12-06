@@ -1,5 +1,6 @@
 <!DOCTYPE html5>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,65 +8,57 @@
   <title>NBA Statistical Analysis</title>
   <script>src = "https://d3js.org/d3.v5.min.js"</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="static/style_index.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+  <link rel="stylesheet" href="static/amber.css">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap"
+    rel="stylesheet">
+
 </head>
+
 <body>
-  <div class="drop">
-    <ul class="drop_menu">
-      <li><a href='#'>Menu</a>
-        <ul>
-          <li><a href='main.html'>Home</a></li>
-          <li><a href='about.html'>About</a></li>
-          <li><a href='map.html'>Salary Map</a></li>
-          <li><a href='index.html'>Stats by Team</a></li>
-        </ul>
-        </a>
+  <div class="background-image">
+    <!-- <img src="../Background1.png"> -->
   </div>
-  <svg class="one" height="400" width="450">
-    <circle cx="150" cy="150" r="100" stroke="black" stroke-width="3" fill="none" />
-    <path class="path" stroke="#000000" ...></path>
-    <path d="M 140 50 q -20 50 96 50" stroke="black" stroke-width="5" fill="none" />
-    <path d="M 75 82 q 115 45 155 130" stroke="black" stroke-width="5" fill="none" />
-    <path d="M 50 145 q 100 -40 75 100" stroke="black" stroke-width="5" fill="none" />
-    <path d="M 63 200 q 60 -140 145 -130" stroke="black" stroke-width="5" fill="none" />
-  </svg>
+  <div class="sidenav">
+    <h1>NBA</h1>
+    <h2>Analytics</h2>
+    <div class="menu">
+      <a href="home.html" style="color: white;">About</a></br></br>
+      <a href="index.html" style="color: white;">Current Statistics</a></br></br>
+      <a href="#predictive" style="color: white;">Predictive Analysis</a></br>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 jumbotron text-center">
-        <!-- <div style= "background-image: url('./images/nba-9.jpg');"> -->
-        <h1>NBA Statistics</h1>
-        <br>
-        <h3>Salaries and Statistics</h3>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="atlanta-container"></div>
-    <div class="col-md-3">
-      <div class="well">
-        <h5>NBA Teams:</h5>
-        <select id="selDataset" onchange="optionChanged(this.value)"></select>
-      </div>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Player Salary</h3>
+      <!-- <div class="atlanta-container"></div> -->
+      <div class="col-md-3">
+        <div class="well">
+          <h5>NBA Teams:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
-        <div id="salary-prediction" class="panel-body"></div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Player Salary</h3>
+          </div>
+          <div id="salary-prediction" class="panel-body"></div>
+        </div>
       </div>
     </div>
-    <div class="col-md-5">
-      <div id="bar"></div>
+    <div class="row">
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="atlanta-container"></div>
+      <!-- <div class="col-md-4">
+        <div id="gauge"></div>
+      </div> -->
     </div>
-    <div class="col-md-4">
-      <div id="gauge"></div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div id="bubble"></div>
-    </div>
-  </div>
   </div>
   <!--d3 Link-->
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -81,6 +74,5 @@
          <div id="chart_div" style="width: 400px; height: 120px;"></div> -->
   <!--<script src="./static/js/bonus.js"></script>-->
 </body>
-</html>
-</body>
+
 </html>
