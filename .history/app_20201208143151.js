@@ -241,10 +241,9 @@ function getMoney(tm) {
     for (var p = 0; p < player_sals.length; p++) {
       player_sals[p]["predicted_salary"] =
         // "$" +
-
         player_sals[p]["predicted_salary"]
-          // .toFixed(2)
-          // .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+          .toFixed(2)
+          .replace(/\d(?=(\d{3})+\.)/g, "$&,");
     }
 
     var salaryInfo = d3.select("#salary-prediction");
