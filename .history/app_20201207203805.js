@@ -240,10 +240,10 @@ function getMoney(tm) {
     console.log(player_sals);
     for (var p = 0; p < player_sals.length; p++) {
       player_sals[p]["predicted_salary"] =
-        // "$" +
+        "$" +
         player_sals[p]["predicted_salary"]
-          // .toFixed(2)
-          // .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+          .toFixed(2)
+          .replace(/\d(?=(\d{3})+\.)/g, "$&,");
     }
 
     var salaryInfo = d3.select("#salary-prediction");
@@ -309,9 +309,9 @@ function getMoney(tm) {
       salaryInfo
         .append("h5")
         .text(
-          player_sals[prop].Player + ": " + player_sals[prop].predicted_salary + "\n"
+          player_sals[prop].Player + ": " + player_sals[prop].yr2019_20 + "\n"
         );
-      console.log(player_sals[prop].Player, player_sals[prop].predicted_salary);
+      console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
     }
   });
 }

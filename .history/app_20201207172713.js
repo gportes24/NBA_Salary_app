@@ -56,7 +56,7 @@ function getdata(tm) {
       ATL: "Red",
       BRK: "Black",
       BOS: "Green",
-      CHO: "purple",
+      CHO: "teal",
       CHI: "red",
       CLE: "maroon",
       DAL: "blue",
@@ -196,7 +196,7 @@ function getdata(tm) {
 }
 
 function getMoney(tm) {
-  d3.json("Resources/salaries_prediction.json").then((data) => {
+  d3.json("Resources/basketball_table.json").then((data) => {
     console.log(data);
     let teamnames = new Set();
     let teamStats = new Set();
@@ -239,11 +239,11 @@ function getMoney(tm) {
     player_sals = uniquekeepFirst(filtered_tm, (it) => it.Player);
     console.log(player_sals);
     for (var p = 0; p < player_sals.length; p++) {
-      player_sals[p]["predicted_salary"] =
-        // "$" +
-        player_sals[p]["predicted_salary"]
-          // .toFixed(2)
-          // .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      player_sals[p]["yr2019_20"] =
+        "$" +
+        player_sals[p]["yr2019_20"]
+          .toFixed(2)
+          .replace(/\d(?=(\d{3})+\.)/g, "$&,");
     }
 
     var salaryInfo = d3.select("#salary-prediction");
@@ -272,7 +272,7 @@ function getMoney(tm) {
         PER: row["PER"],
         pos: row["pos"],
       };
-      // console.log(info);
+      console.log(info);
     });
     //forEach through rows to push only Top 5 PlayerName and PERbyPoistion in new variable
     let topFivePos = [output[0]];
@@ -284,7 +284,7 @@ function getMoney(tm) {
         topFivePos.push(row);
       }
     });
-    console.log(topFivePos);
+
     // var outputArray = Object.values(output).flat();
 
     // var sorted_array= outputArray.sort(function(a,b){
@@ -309,9 +309,9 @@ function getMoney(tm) {
       salaryInfo
         .append("h5")
         .text(
-          player_sals[prop].Player + ": " + player_sals[prop].predicted_salary + "\n"
+          player_sals[prop].Player + ": " + player_sals[prop].yr2019_20 + "\n"
         );
-      console.log(player_sals[prop].Player, player_sals[prop].predicted_salary);
+      console.log(player_sals[prop].Player, player_sals[prop].yr2019_20);
     }
   });
 }
