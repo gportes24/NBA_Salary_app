@@ -1,15 +1,15 @@
 //  -based on the code from https://observablehq.com/@d3/bar-chart-race@3048
 export default function define(runtime, observer) {
   const main = runtime.module();
-  const fileAttachments = new Map([["category-brands.csv", new URL("./files/money4.csv",import.meta.url)]]);
+  const fileAttachments = new Map([["money4.csv", new URL("./files/money4.csv",import.meta.url)]]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], function(md){return(
 md`# Bar Chart Race
 
-. Color indicates states. Data: NBA contracts)`
+Team salary per $10,000. Color indicates home states. Data: NBA contracts)`
 )});
   main.variable(observer("data")).define("data", ["FileAttachment"], function(FileAttachment){return(
-FileAttachment("category-brands.csv").csv({typed: true})
+FileAttachment("money4.csv").csv({typed: true})
 )});
   main.variable(observer("viewof replay")).define("viewof replay", ["html"], function(html){return(
 html`<button>Replay`
