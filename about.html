@@ -7,139 +7,55 @@
     <link href="./images/nba_browser_icon.png" rel="icon" type="image/x-icon" />
     <title>NBA Statistical Analysis</title>
     <script>src = "https://d3js.org/d3.v5.min.js"</script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style_about.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="static/amber.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
 
 
-
-</head>
 
 <body>
-    <div class="header">
-
-        <div class="drop" id="myHeader">
-            <ul class="drop_menu">
-                <li><a href='#'>Menu</a>
-                    <ul>
-                        <li><a href='main.html'>Home</a></li>
-                        <li><a href='about.html'>About</a></li>
-                        <li><a href='map.html'>Salary Map</a></li>
-                        <li><a href='index.html'>Stats by Team</a></li>
-                    </ul>
-                    </a>
-                </li>
-
-
-        <div class=" sidebar-sticky">
-            <svg class="sidebar" height="400" width="450">
-                <circle cx="150" cy="150" r="100" stroke="blanchedalmond" stroke-width="3" fill="none" />
-                <path class="path" stroke="#000000" ...></path>
-                <path d="M 140 50 q -20 50 96 50" stroke="blanchedalmond" stroke-width="5" fill="none" />
-                <path d="M 75 82 q 115 45 155 130" stroke="blanchedalmond" stroke-width="5" fill="none" />
-                <path d="M 50 145 q 100 -40 75 100" stroke="blanchedalmond" stroke-width="5" fill="none" />
-                <path d="M 63 200 q 60 -140 145 -130" stroke="blanchedalmond" stroke-width="5" fill="none" />
-            </svg>
-        </div>
-
+    <div class="background-image">
+        <!-- <img src="../Background1.png"> -->
     </div>
+    <div class="sidenav">
+        <h1>NBA</h1>
+        <h2>Analytics</h2>
+        <div class="menu">
+            <a href="#about" style="color: white;">About</a></br></br>
+            <a href="index.html" style="color: white;">Current Statistics</a></br></br>
+            <a href="#predictive" style="color: white;">Predictive Analysis</a></br>
+        </div>
+    </div>
+    <title>Bar Chart Race</title>
+  <link rel="stylesheet" type="text/css" href="./bar-chart-race (2)/inspector.css">
+  
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="jumbotron">
-                <h1>About</h1>
-                <br>
-                <h3>Our Statistical Analysis</h3>
-                <hr>
-                <h5>Hina Ahmed, Amber Gershman, German Portes, Mohammad Raza</h5>
+    <script type="module">
 
-                </style>
-            </div>
-        </div>
+      import define from "./bar-chart-race (2)/index.js";
+      import { Runtime, Library, Inspector } from "./bar-chart-race (2)/runtime.js";
 
-        <div class="row">
-            <div class="col-lg-12">
-                <p>
-                <h3>Background</h3>
-                This endeavor was an ambitious extension of our ETL project. We wanted to use reliable,
-                widely-available, and well-documented data to analyze and decided that
-                sports data would be meet our criteria. Selecting the National Basketball Association proved to be
-                interesting as the majority of our group wasn't familiar
-                with the game, standings, players, or metrix for success. Therefore, we were able to both construct
-                a full stack development project while learning about the game.
-                <br>
-                <br>
-                We began by scouring the internet for respected sources proiding information on basketball
-                stastisics. We wanted to look
-                at what information was available and how those datasets could be analzyed. German found
-                NBA-Reference.com, a website providing
-                comprehensive statistics spanning decades. Our first project sought to scrape, clean and render
-                these tables into a SQL database.
-                <br>
-                <br>
-                <h3>The First Questions</h3>
-                Our second project began by reviewing which statistics we had included in the final dataset and how
-                we could map and analyze those results.
-                We began by reviewing the players' salary to deduce how much money each player earned per point
-                scored. However, we quickly realized that - while this was
-                a damning referendum on highly paid players in juxtaposition to our own annual salaries - the
-                analysis would be skewed. As German pointed out, it was important
-                to score points - but that was not the primary objective of each player. It would be unfair to judge
-                a non-scoring player on his goals when he is
-                primarily a shooting guard. Additionally, a player with a high salary contract who misses several
-                games due to injury shouldn't be judged because of
-                his convalescence.
-                <br>
-                <br>
-                <h3>The PER</h3>
-                The National Basketball Association has been in this game for a while - and understands the value of
-                statisics. They have calucluated
-                a score termed "Player Efficiency Rating" (hereafter PER), which measures the players' per-minute
-                productivity.
-                The considerations within this score is too complicated to discuss here however the scale is
-                generally between 4 and 30 (the difference between a good high school
-                player at low end and LeBron James setting the standard near the top). While comprehensive, the PER
-                does not provide a lifetime judgement of the fundamental value of a player,
-                but essentially, according to ESPN Analyst John Hollinger, "summarize a player's statistical
-                accomplishments in a single number." And voila, a main component of our
-                job had been done for us by those handy NBA officials. We could now get to work scoring the PER
-                against other statistics and salary metrix.
-                <br>
-                <br>
-                <h3>The Stats</h3>
-                We calculated the salary contracted for each NBA player for the 2019-2020 season and
-                cross-referenced them against their statisitics.
-                These included points scored, blocks, assists, rebounds, fouls, minutes played and games played.
-                Each of these provided additional
-                context for the player's PER. Our Statistics webpage allows the viewer to analyze the salaries of
-                players by team and their PER.
-                <br>
-                <br>
-                <h3>The Map</h3>
-                Additionally, we aggregated the salary total for each team and the average PER of players, and
-                mapped out the average efficiency of teams against the size of their budget allocation. This
-                provides a
-                unique view, allowing the viewer to see
-                a top-line analysis of the money spent on players versus how productive those players were, on
-                average.
-                Oddly enough, the teams that spend more money on players generally have a lower average PER.
-                Obviously,
-                this could be attributed to several different reasons - mainly that teams may allocate a huge
-                percentage
-                of their salary budget on someone like Lebron James or Steph Curry but due to league salary caps,
-                would
-                not be able to stack their remaining lineup with consistent talent. That being said - it is
-                extremely
-                interesting to this analyst that the three most efficient teams also spend the least.
-                </p>
-            </div>
-        </div>
+      const runtime = new Runtime();
+      const main = runtime.module(define, Inspector.into(document.body));
+
+    </script>
     </div>
-    <script type="text/javascript" src="../static/anime.js"></script>
-</body>
+    <!--d3 Link-->
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+    <!--<script src="../static/app.js"></script>-->
 
-</html>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <!-- <script src="<https://plot.ly/javascript/gauge-charts"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+         <div id="chart_div" style="width: 400px; height: 120px;"></div> -->
+    <!--<script src="./static/js/bonus.js"></script>-->
 </body>
 
 </html>

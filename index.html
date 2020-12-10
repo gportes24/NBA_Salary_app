@@ -24,14 +24,13 @@
     <h1>NBA</h1>
     <h2>Analytics</h2>
     <div class="menu">
-      <a href="home.html" style="color: white;">About</a></br></br>
-      <a href="index.html" style="color: white;">Current Statistics</a></br></br>
-      <a href="#predictive" style="color: white;">Predictive Analysis</a></br>
+      <!-- <a href="home.html" style="color: white;">About</a></br></br> -->
+      <a href="about.html" style="color: white;">About</a></br></br>
+      <!-- <a href="#predictive" style="color: white;">Predictive Analysis</a></br> -->
     </div>
   </div>
-  <!DOCTYPE html>
-  <meta charset="utf-8">
-  <title>Bar Chart Race</title>
+
+  <!-- <title>Bar Chart Race</title>
   <link rel="stylesheet" type="text/css" href="./bar-chart-race (2)/inspector.css">
   
   <body>
@@ -43,26 +42,25 @@
       const runtime = new Runtime();
       const main = runtime.module(define, Inspector.into(document.body));
 
-    </script>
+    </script> -->
+  <dic class="header">
+    <h1>Current Statistics</h1>
+  </dic>
   <div class="container">
     <div class="row">
-      <!-- <div class="atlanta-container"></div> -->
       <div class="col-md-3">
         <div class="well">
           <h5>NBA Teams:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Player Salary</h3>
-          </div>
-          <div id="salary-prediction" class="panel-body"></div>
-        </div>
+      <div id="team_name">
+          <h2>You are viewing statitics on </h2>
+      </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-5">
-        <div id="bar"></div>
+        <div id=""></div>
       </div>
       <div class="atlanta-container"></div>
       <!-- <div class="col-md-4">
@@ -70,11 +68,23 @@
       </div> -->
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-6">
         <div id="bubble"></div>
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Predicted Player Salary</h3>
+      </div>
+      <div id="salary-prediction" class="panel-body"></div>
+    </div>
+  </div>
+
   <!--d3 Link-->
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
