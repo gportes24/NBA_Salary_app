@@ -37,7 +37,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    
+
     <div class="container">
         <script type="module">
 
@@ -45,11 +45,59 @@
             import { Runtime, Library, Inspector } from "./bar-chart-race (2)/runtime.js";
 
             const runtime = new Runtime().module(define, name => {
-                    if (name === "chart") { return Inspector.into(document.body)() }
-                });
+                if (name === "chart") { return Inspector.into(document.body)() }
+            });
 
         </script>
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+            <h3>Background</h3>
+            We began by scouring the internet for respected sources proiding information on basketball
+            stastisics. We wanted to look
+            at what information was available and how those datasets could be analzyed. German found
+            NBA-Reference.com, a website providing
+            comprehensive statistics spanning decades. Our first project sought to scrape, clean and render
+            these tables into a SQL database.
+            <br>
+            <br>
+            <h3>T  Questions</h3>
+            
+            <br>
+            <br>
+            <h3>The PER</h3>
+            The National Basketball Association has been in this game for a while - and understands the value of
+            statisics. They have calucluated a score termed "Player Efficiency Rating" (hereafter PER), which measures the players' per-minute
+            productivity.
+            The considerations within this score is too complicated to discuss here however the scale is
+            generally between 4 and 30 (the difference between a good high school
+            player at low end and LeBron James setting the standard near the top). While comprehensive, the PER
+            does not provide a lifetime judgement of the fundamental value of a player,
+            but essentially, according to ESPN Analyst John Hollinger, "summarize a player's statistical
+            accomplishments in a single number." And voila, a main component of our
+            job had been done for us by those handy NBA officials. We could now get to work scoring the PER
+            against other statistics and salary metrix.
+            <br>
+            <br>
+            <h3>The Stats</h3>
+            We calculated the salary contracted for each NBA player for the 2019-2020 season and
+            cross-referenced them against their statisitics.
+            These included points scored, blocks, assists, rebounds, fouls, minutes played and games played.
+            Each of these provided additional
+            context for the player's PER. Our Statistics webpage allows the viewer to analyze the salaries of
+            players by team and their PER.
+            <br>
+            <br>
+            <h3>The Starting money</h3>
+            One of the keys to components understanding NBA teams is understanding the salary of a team. 
+            Looking over a three-year move through their payments and the money they paid towards their 
+            salary caps provides an initial understanding of how to break things down across players.
+            <br>
+            <br>
+        </div>
+    </div>
+    </div> <!-- /container -->
     <!--<script src="../static/app.js"></script>-->
 
     <!-- <script src="<https://plot.ly/javascript/gauge-charts"></script>
