@@ -1,0 +1,93 @@
+<!DOCTYPE html5>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./images/nba_browser_icon.png" rel="icon" type="image/x-icon" />
+  <title>NBA Statistical Analysis</title>
+  <script>src = "https://d3js.org/d3.v5.min.js"</script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/amber.css">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="background-image">
+    <!-- <img src="../Background1.png"> -->
+  </div>
+
+  <dic class="header">
+    <h1>Current Statistics</h1>
+  </dic>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="well">
+          <h5>NBA Teams:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div id="team_name">
+          <h2>You are viewing statitics on </h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div id=""></div>
+      </div>
+      <div class="atlanta-container"></div>
+      <!-- <div class="col-md-4">
+        <div id="gauge"></div>
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src={} alt="Avatar" style="width:10%">
+          <div class="container">
+            <h4><b></b></h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Predicted Player Salary</h3>
+      </div>
+      <div id="salary-prediction" class="panel-body"></div>
+    </div>
+  </div>
+
+  <!--d3 Link-->
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript" src="../static/anime.js"></script>
+  <!--<script src="../static/app.js"></script>-->
+  <script src="app.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+  <!-- <script src="<https://plot.ly/javascript/gauge-charts"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+         <div id="chart_div" style="width: 400px; height: 120px;"></div> -->
+  <!--<script src="./static/js/bonus.js"></script>-->
+</body>
+
+</html>

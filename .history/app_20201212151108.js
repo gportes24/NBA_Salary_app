@@ -271,25 +271,23 @@ function getMoney(tm) {
       }
     });
     console.log(topFivePos)
-
     var optimal = d3.select(".card");
 
     // empty player salary before getting new salary based on team selected
-
+    
     optimal.html("");
 
     for (var dude in topFivePos) {
       optimal
-        .append("div")
-        .classed(".card", true)
-        .html(function () { return `<img src=${topFivePos[dude].headshot} >`; })
-        .append("h4")
+        .append("img")
+        .html(topFivePos[dude].headshot)
+        .append("h4")        
         .html(
           "Player: " + topFivePos[dude].Player + "\n")
         .append("p")
         .html(
-          "</br> Position: " + topFivePos[dude].pos + "<br> Efficiency:" + topFivePos[dude].PER + "<br> Predicted Salary: " + topFivePos[dude].predicted_salary + "\n")
-
+          "</br> Position: "+ topFivePos[dude].pos + "<br> Efficiency:"  + topFivePos[dude].PER + "<br> Predicted Salary: " + topFivePos[dude].predicted_salary + "\n")
+        
       console.log(topFivePos[dude].Player, topFivePos[dude].predicted_salary);
     }
     console.log(topFivePos[dude].headshot);
@@ -329,21 +327,17 @@ function getTeam(tm) {
     var profile = data
     console.log(profile);
 
-    var team_profile = profile.filter((a) => a.tm === tm)[0];
+    var team_profile = profile.filter((a) => a.tm ===tm)[0];
     console.log(team_profile);
-
+    
     var teamInfo = d3.select("#team_name");
     teamInfo.html("");
-    Object.keys(team_profile).forEach((key) => {
+    Object.keys(team_profile).forEach((key)=>{
       teamInfo.append("h5").text(key.toUpperCase() + ": " + team_profile[key] + "\n");
     });
 
-  }); 
-  current_team = d3.select("#current_team");
-  current_team.html("");
-  current_team.append(`"You are viewing information on the" ${team_profile.team}`)
+  });
 }
-
 
 
 function optionChanged(tm) {
