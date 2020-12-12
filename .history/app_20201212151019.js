@@ -280,7 +280,7 @@ function getMoney(tm) {
     for (var dude in topFivePos) {
       optimal
         .append("src")
-        .html(topFivePos[dude].headshot)
+        .img(topFivePos[dude].headshot)
         .append("h4")        
         .html(
           "Player: " + topFivePos[dude].Player + "\n")
