@@ -339,10 +339,7 @@ function getTeam(tm) {
     });
 
   }); 
-  current_team = d3.select("#current_team");
-  current_team.html("");
-  current_team.append(`"You are viewing information on the" ${team_profile.team}`)
-}
+  }
 
 
 
