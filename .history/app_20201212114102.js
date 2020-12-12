@@ -210,19 +210,19 @@ function getMoney(tm) {
       if (player_list[0] == player_list[i]) {
         player_list = player_list.slice(0, i);
         salary = salary.slice(0, i);
-        // console.log(player_list);
-        // console.log(salary);
+        console.log(player_list);
+        console.log(salary);
       }
     }
     var money = player_list.concat(salary);
-    // console.log(money);
+    console.log(money);
 
     //the function below removes duplicate player/salary values from array/object
     function uniquekeepFirst(data, key) {
       return [...new Map(data.map((x) => [key(x), x])).values()];
     }
     player_sals = uniquekeepFirst(filtered_tm, (it) => it.Player);
-    // console.log(player_sals);
+    console.log(player_sals);
     for (var p = 0; p < player_sals.length; p++) {
       player_sals[p]["predicted_salary"] =
         // "$" +
@@ -251,7 +251,7 @@ function getMoney(tm) {
     });
     //orderby to get player's PER by position type in DESCENDING order
     var output = _.orderBy(player_sals, ["pos", "PER"], ["desc", "desc"]);
-    // console.log("---output---");
+    console.log("---output---");
     output.forEach((row) => {
       let info = {
         Player: row["Player"],
@@ -270,7 +270,7 @@ function getMoney(tm) {
         topFivePos.push(row);
       }
     });
-    // console.log(topFivePos);
+    console.log(topFivePos);
     // var outputArray = Object.values(output).flat();
 
     // var sorted_array= outputArray.sort(function(a,b){
@@ -297,7 +297,7 @@ function getMoney(tm) {
         .text(
           player_sals[prop].Player + ": " + player_sals[prop].predicted_salary + "\n"
         );
-      // console.log(player_sals[prop].Player, player_sals[prop].predicted_salary);
+      console.log(player_sals[prop].Player, player_sals[prop].predicted_salary);
     }
   });
 }
