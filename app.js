@@ -270,6 +270,27 @@ function getMoney(tm) {
         topFivePos.push(row);
       }
     });
+    console.log(topFivePos)
+    var optimal = d3.select(".card");
+
+    // empty player salary before getting new salary based on team selected
+    
+    optimal.html("");
+
+    for (var dude in topFivePos) {
+      optimal
+        .append("src")
+        .html(topFivePos[dude].headshot)
+        .append("h4")        
+        .html(
+          "Player: " + topFivePos[dude].Player + "\n")
+        .append("p")
+        .html(
+          "</br> Position: "+ topFivePos[dude].pos + "<br> Efficiency:"  + topFivePos[dude].PER + "<br> Predicted Salary: " + topFivePos[dude].predicted_salary + "\n")
+        
+      console.log(topFivePos[dude].Player, topFivePos[dude].predicted_salary);
+    }
+
     // console.log(topFivePos);
     // var outputArray = Object.values(output).flat();
 
