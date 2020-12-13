@@ -15,9 +15,36 @@
         rel="stylesheet">
     <link rel="stylesheet" href="static/amber.css">
 </head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+<head>
+    <title>PER by players</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script type="text/javascript" src="bubble.js"></script>
+    <div class="new_bubble"></div>
+    <script>
+        function bubbles() {
 
-<body>
+        }
+    </script>
+    <style>
+        .bubbles {
+            stroke-width: 1px;
+            stroke: black;
+            opacity: .8
+        }
+
+        .bubbles:hover {
+            stroke: black;
+        }
+    </style>
+
+    <p>Click the following button to see the function in action</p>
+    <input type="button" onclick="bubbles()" value="Display">
+
     <div class="background-image">
         <!-- <img src="../Background1.png"> -->
     </div>
@@ -62,13 +89,10 @@
             these tables into a SQL database.
             <br>
             <br>
-            <h3>T  Questions</h3>
-            
-            <br>
-            <br>
             <h3>The PER</h3>
             The National Basketball Association has been in this game for a while - and understands the value of
-            statisics. They have calucluated a score termed "Player Efficiency Rating" (hereafter PER), which measures the players' per-minute
+            statisics. They have calucluated a score termed "Player Efficiency Rating" (hereafter PER), which measures
+            the players' per-minute
             productivity.
             The considerations within this score is too complicated to discuss here however the scale is
             generally between 4 and 30 (the difference between a good high school
@@ -90,20 +114,14 @@
             <br>
             <br>
             <h3>The Starting money</h3>
-            One of the keys to components understanding NBA teams is understanding the salary of a team. 
-            Looking over a three-year move through their payments and the money they paid towards their 
+            One of the keys to components understanding NBA teams is understanding the salary of a team.
+            Looking over a three-year move through their payments and the money they paid towards their
             salary caps provides an initial understanding of how to break things down across players.
             <br>
             <br>
         </div>
     </div>
     </div> <!-- /container -->
-    <!--<script src="../static/app.js"></script>-->
-
-    <!-- <script src="<https://plot.ly/javascript/gauge-charts"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-         <div id="chart_div" style="width: 400px; height: 120px;"></div> -->
-    <!--<script src="./static/js/bonus.js"></script>-->
 </body>
 
 </html>
