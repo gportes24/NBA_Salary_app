@@ -5,31 +5,41 @@
 
 <head>
     <title>PER by players</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script type="text/javascript" src="bubble.js"></script>
-    <div class="new_bubble"></div>
-    <script>
-        function bubbles() {
+</head>
+<div class="new_bubble"></div>
+<canvas>id="new_bubble" width="500" height="420"></canvas>
+<script>
+    // set the dimensions and margins of the graph
+    var margin = { top: 40, right: 150, bottom: 60, left: 30 },
+        width = 500 - margin.left - margin.right,
+        height = 420 - margin.top - margin.bottom;
 
-        }
-    </script>
+    // append the svg object to the body of the page
+    var svg = d3.select("#new_bubble")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+</script>
+<style>
+    .bubbles {
+        stroke-width: 1px;
+        stroke: black;
+        opacity: .8
+    }
 
-<body>
-    <style>
-        .bubbles {
-            stroke-width: 1px;
-            stroke: black;
-            opacity: .8
-        }
+    .bubbles:hover {
+        stroke: black;
+    }
+</style>
 
-        .bubbles:hover {
-            stroke: black;
-        }
-    </style>
-
-    <p>Click the following button to see the function in action</p>
-    <input type="button" onclick="bubbles()" value="Display">
+<p>Click the following button to see the function in action</p>
+<input type="button" onclick="bubbles()" value="Display">
 </body>
 
 </html>
