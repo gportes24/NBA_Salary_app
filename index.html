@@ -11,85 +11,96 @@
   <link rel="stylesheet" href="static/amber.css">
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script> -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&family=Poppins&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-  <div class="background-image">
-    <!-- <img src="../Background1.png"> -->
-  </div>
+  <video autoplay muted loop id="myVideo">
+    <source src="static/flashing_steph.mp4" type="video/mp4">
+</video>
 
-  <dic class="header">
-    <h1>Current Statistics</h1>
-  </dic>
   <div class="container">
+    <div class="header">
+      <h1>NBA Performance & Analytics</h1>
+    </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-12">
         <div class="well">
-          <h5>NBA Teams:</h5>
+          <h5>Choose Your Team:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
       </div>
+    </div>
+    <div class="container">
+      <div class="header">
+        <h2>Team Information</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="atlanta-container"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="team_name"></div>
+        </div>
+      </div>
+      <div class="header">
+        <h2>Current Statistics</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="bar"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="bubble"></div>
+        </div>
+      </div>
+    </div>
 
-      <div id="team_name"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-5">
-        <div id=""></div>
+    <div class="container">
+      <div class="header">
+        <h2>Predictive Analytics</h2>
+        <h4>--Optimal Lineup--</h4>
       </div>
-      <div class="atlanta-container"></div>
-      <!-- <div class="col-md-4">
-        <div id="gauge"></div>
-      </div> -->
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div id="bar"></div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <img src="" alt="Avatar" style="width:10%">
+            <div class="container">
+              <h4></h4>
+              <p></p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <div id="bubble"></div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
 
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="card">
-          <img src="" alt="Avatar" style="width:10%">
-          <div class="container">
-            <h4><b></b></h4>
-            <p></p>
+      <div class="predictive">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Predicted Player Salary</h3>
+              <h5>2021 Season</h5>
+            </div>
+            <div id="salary-prediction" class="panel-body"></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Predicted Player Salary</h3>
-      </div>
-      <div id="salary-prediction" class="panel-body"></div>
-    </div>
-  </div>
+
   </div>
   <!--d3 Link-->
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <!--plotly scripts-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-  <!--<script src="../static/app.js"></script>-->
-  <script src="app.js"></script>
+  
+  <!--Bootstrap Scripts-->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
-  <!-- <script src="<https://plot.ly/javascript/gauge-charts"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-         <div id="chart_div" style="width: 400px; height: 120px;"></div> -->
-  <!--<script src="./static/js/bonus.js"></script>-->
+  <!--Javascript Content-->
+  <script src="app.js"></script>
+
 </body>
 
 </html>

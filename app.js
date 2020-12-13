@@ -147,15 +147,20 @@ function getdata(tm) {
     var data = [trace];
 
     var layout = {
-      title: "NBA Salary by Team",
+      plot_bgcolor:"transparent",
+      paper_bgcolor:"transparent",
+      title: `${salary_test[i].tm} Salary by Player`,
+      font: {
+        family: "'Lato', sans-serif",
+    },
       xaxis: {
         type: "category-unique",
       },
       margin: {
-        l: 100,
-        r: 100,
-        t: 100,
-        b: 100,
+        l: 170,
+        r: 120,
+        t: 80,
+        b: 50,
       },
     };
 
@@ -168,16 +173,22 @@ function getdata(tm) {
       mode: "markers",
 
       marker: {
-        color: salary,
+        color: testing2,
         size: per,
       },
     };
     let data1 = [trace1];
     var layout1 = {
-      title: "NBA Salary",
-    };
+      plot_bgcolor:"transparent",
+      paper_bgcolor:"transparent",
+      title: `${salary_test[i].tm} Player's by Salary & Points`,
+      font: {
+        family: "'Lato', sans-serif",
+    }
+  };
     Plotly.newPlot("bubble", data1, layout1);
-  });
+  }); 
+
 }
 
 function getMoney(tm) {
@@ -230,7 +241,7 @@ function getMoney(tm) {
         player_sals[p]["predicted_salary"]
       // .toFixed(2)
       // .replace(/\d(?=(\d{3})+\.)/g, "$&,");
-    }
+    } 
 
     var salaryInfo = d3.select("#salary-prediction");
 
@@ -288,31 +299,10 @@ function getMoney(tm) {
           "Player: " + topFivePos[dude].Player + "\n")
         .append("p")
         .html(
-          "</br> Position: " + topFivePos[dude].pos + "<br> Efficiency:" + topFivePos[dude].PER + "<br> Predicted Salary: " + topFivePos[dude].predicted_salary + "\n")
+          "</br><b> Position: </b>" + topFivePos[dude].pos + "<br> <b>Efficiency:</b> " + topFivePos[dude].PER + "<br> <b>Predicted Salary: </b>" + topFivePos[dude].predicted_salary + "\n")
+    };
 
-      console.log(topFivePos[dude].Player, topFivePos[dude].predicted_salary);
-    }
-    console.log(topFivePos[dude].headshot);
-    // console.log(topFivePos);
-    // var outputArray = Object.values(output).flat();
 
-    // var sorted_array= outputArray.sort(function(a,b){
-    //   return parseFloat(b.PER) - parseFloat(a.PER);
-    // })
-
-    // var positions = ["PG", "SG", "SF", "PF", "C"];
-    // var startingFive = [];
-    // positions.forEach (function(a){
-    //   var x = sorted_array.find(function(b){
-    //     return b.pos.toLowerCase()===a.toLocaleLowerCase();
-
-    //   })
-
-    //   startingFive.push(x);
-
-    // })
-
-    // console.log(startingFive);
 
     for (var prop in player_sals) {
       salaryInfo
@@ -335,7 +325,7 @@ function getTeam(tm) {
     var teamInfo = d3.select("#team_name");
     teamInfo.html("");
     Object.keys(team_profile).forEach((key) => {
-      teamInfo.append("h5").text(key.toUpperCase() + ": " + team_profile[key] + "\n");
+      teamInfo.append("h4").text(key.toUpperCase() + ":   " + team_profile[key] + "\n");
     });
 
   }); 
