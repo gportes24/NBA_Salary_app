@@ -24,7 +24,8 @@ body,
 .header {
   margin-top: 5%;
 	text-align: center;
-	font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 72px;
 }
 
 .well {
@@ -128,4 +129,32 @@ body,
   .predictive h3 {
     font-weight: bold;
 
+  }
+
+  #home {
+    position: sticky;
+    float: left;
+    bottom: 5%;
+    margin-left: 10%;
+    font-family:  'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+  }
+
+  #more {
+    position: sticky;
+    float: right;
+    bottom: 5%;
+    margin-right: 10%;
+    font-family:  'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
   }
