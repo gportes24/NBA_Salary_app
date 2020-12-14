@@ -18,32 +18,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<head>
-    <title>PER by players</title>
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script type="text/javascript" src="bubble.js"></script>
-    <div class="chart"></div>
-    <script>
-        function bubbles() {
-
-        }
-    </script>
-    <style>
-        .bubbles {
-            stroke-width: 1px;
-            stroke: black;
-            opacity: .8
-        }
-
-        .bubbles:hover {
-            stroke: black;
-        }
-    </style>
-
-    <p>Click the following button to see the function in action</p>
-    <input type="button" onclick="bubbles()" value="Display">
-
     <div class="background-image">
         <!-- <img src="../Background1.png"> -->
     </div>
@@ -56,7 +30,6 @@
             <a href="#predictive" style="color: white;">Predictive Analysis</a></br>
         </div>
     </div>
-
 
     <!--d3 Link-->
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -81,21 +54,31 @@
             <p>
             <h3>Background</h3>
             We began by scouring the internet for respected sources proiding information on basketball
-            stastisics. We wanted to look
-            at what information was available and how those datasets could be analzyed. German found
-            NBA-Reference.com, a website providing
-            comprehensive statistics spanning decades. Our first project sought to scrape, clean and render
-            these tables into a SQL database.
+            stastisics. We wanted to look at what information was available and how those datasets could be analzyed. German found
+            NBA-Reference.com, a website providing comprehensive statistics spanning decades. Our first project sought to scrape, clean and render
+            these tables.
+            <br>
+            <br>
+            <h3>The Starting money</h3>
+            It's all about the prediction game. Sports are a treasure trove of data that can help provide critical understandings
+            and analysis about the game directly played and some of the other venues that run parallel to its presentation. We look
+            at what past data offers to find interesting future trends and how they might give insight into those ancillary
+            activities. This analysis provides a place to review data to understand future salaries looking at weighable stats, and
+            determine outcomes. The data set did require some changes before it was deployable. We had to remove all players who
+            earned a salary last year but did not play due to injury or opted out due to pandemic. It is a unique year and allows
+            for a stress test of the system and its resiliency to adapt to an unusual data set. Then had to adjust for all players
+            with on two-way contract that had to be removed. Those are players on minor league deals that earn $50k plus per diem
+            and get a prorated pay raise when they are called up to play in the major league. Those players restrict to play a max
+            of 10 games while on a two-way contract. If the team wants a more extended period, we thought it was prudent to remove
+            those players below that threshold, train, test, split, and fit the dataframe. This would be done to get a more
+            authentic reflection of the salary for predictive purposes and optimal lines based on player ability and salary caps.
             <br>
             <br>
             <h3>The PER</h3>
             The National Basketball Association has been in this game for a while - and understands the value of
             statisics. They have calucluated a score termed "Player Efficiency Rating" (hereafter PER), which measures
-            the players' per-minute
-            productivity.
-            The considerations within this score is too complicated to discuss here however the scale is
-            generally between 4 and 30 (the difference between a good high school
-            player at low end and LeBron James setting the standard near the top). While comprehensive, the PER
+            the players' per-minute productivity. The considerations within this score is too complicated to discuss here however the scale is
+            generally between 4 and 30 (the difference between a good high school player at low end and LeBron James setting the standard near the top). While comprehensive, the PER
             does not provide a lifetime judgement of the fundamental value of a player,
             but essentially, according to ESPN Analyst John Hollinger, "summarize a player's statistical
             accomplishments in a single number." And voila, a main component of our
