@@ -173,7 +173,7 @@ function getdata(tm) {
       mode: "markers",
 
       marker: {
-        color: testing2,
+        color: salary,
         size: per,
       },
     };
@@ -204,7 +204,7 @@ function getdata(tm) {
     var layout2 = {
       plot_bgcolor: "transparent",
       paper_bgcolor: "transparent",
-      title: `${tm} Player's by Players & predicted PER`,
+      title: `${tm} Player's by Predicted 20-21 Salary & PER`,
       font: {
         family: "'Lato', sans-serif",
       }
@@ -333,7 +333,7 @@ function getMoney(tm) {
         .text(
           player_sals[prop].Player + ": " + player_sals[prop].predicted_salary + "\n"
         );
-      // console.log(player_sals[prop].Player, player_sals[prop].predicted_salary);
+      console.log(player_sals);
     }
   });
 }
@@ -353,8 +353,6 @@ function getTeam(tm) {
 
   });
 }
-
-
 
 function optionChanged(tm) {
   getdata(tm);
