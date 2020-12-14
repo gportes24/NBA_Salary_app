@@ -147,12 +147,12 @@ function getdata(tm) {
     var data = [trace];
 
     var layout = {
-      plot_bgcolor:"transparent",
-      paper_bgcolor:"transparent",
+      plot_bgcolor: "transparent",
+      paper_bgcolor: "transparent",
       title: `${salary_test[i].tm} Salary by Player`,
       font: {
         family: "'Lato', sans-serif",
-    },
+      },
       xaxis: {
         type: "category-unique",
       },
@@ -173,21 +173,44 @@ function getdata(tm) {
       mode: "markers",
 
       marker: {
-        color: testing2,
+        color: salary,
         size: per,
       },
     };
     let data1 = [trace1];
     var layout1 = {
-      plot_bgcolor:"transparent",
-      paper_bgcolor:"transparent",
+      plot_bgcolor: "transparent",
+      paper_bgcolor: "transparent",
       title: `${salary_test[i].tm} Player's by Salary & Points`,
       font: {
         family: "'Lato', sans-serif",
-    }
-  };
+      }
+    };
     Plotly.newPlot("bubble", data1, layout1);
-  }); 
+
+    let trace2 = {
+      x: player_list,
+      y: per,
+      text: player_list,
+      mode: "markers",
+
+      marker: {
+        color: testing2,
+        size: per,
+      },
+    };
+    
+    let data2 = [trace2];
+    var layout2 = {
+      plot_bgcolor: "transparent",
+      paper_bgcolor: "transparent",
+      title: `${tm} Player's by Predicted 20-21 Salary & PER`,
+      font: {
+        family: "'Lato', sans-serif",
+      }
+    };
+    Plotly.newPlot("bubble2", data2, layout2);
+  });
 
 }
 
@@ -241,7 +264,7 @@ function getMoney(tm) {
         player_sals[p]["predicted_salary"]
       // .toFixed(2)
       // .replace(/\d(?=(\d{3})+\.)/g, "$&,");
-    } 
+    }
 
     var salaryInfo = d3.select("#salary-prediction");
 
@@ -310,7 +333,7 @@ function getMoney(tm) {
         .text(
           player_sals[prop].Player + ": " + player_sals[prop].predicted_salary + "\n"
         );
-      // console.log(player_sals[prop].Player, player_sals[prop].predicted_salary);
+      console.log(player_sals);
     }
   });
 }
@@ -328,10 +351,8 @@ function getTeam(tm) {
       teamInfo.append("h4").text(key.toUpperCase() + ":   " + team_profile[key] + "\n");
     });
 
-  }); 
-  }
-
-
+  });
+}
 
 function optionChanged(tm) {
   getdata(tm);

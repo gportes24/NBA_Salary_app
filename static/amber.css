@@ -128,7 +128,10 @@ body,
   }
   .predictive h3 {
     font-weight: bold;
+  }
 
+  #bubble2 {
+    width: 95%;
   }
 
   #home {
